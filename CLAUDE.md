@@ -1,32 +1,14 @@
-"use client";
+# Websiteerstellung
 
-import type { ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+## Tech Stack
+- Next.js 15 + TypeScript + Tailwind CSS
+- Framer Motion für Animationen
 
-export function Reveal({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+## Design-Regeln
+- Nutze das AskUserQuestion Tool, um den Nutzer über das Websitedesign zu interviewen, damit du die Vorstellungen des Nutzers genau abbilden kannst
+- Nutze den frontend-design Skill für alle UI-Entscheidungen
+- Nutze UI/UX Pro Max für Design-System-Generierung
+- Nutze ggf. 21st.dev für Component-Inspiration (falls vorgegeben)
+Keine generischen AI-Aesthetics
+- Bold, distinctive Design-Choices
+- Performance-optimiert (Core Web Vitals)
